@@ -14,7 +14,11 @@ prod(K,N,gen){
   return ans;
 }
 fact(N){
+  if(N==Math.round(N)){
   return prod(1,N,"k");
+  }else{
+  console.error("残念ですが、小数に対応していません。");
+  }
 }
 nPr(n,r){
   return fact(n)/fact(n-r);
@@ -36,4 +40,7 @@ geomean(arr){
   }
   return Math.pow(ans,1/arr.length);
 }
+  median(arr){
+    return (arr[Math.floor((arr.length-1)/2)]+arr[Math.ceil((arr.length-1)/2)])/2;
+  }
 }
