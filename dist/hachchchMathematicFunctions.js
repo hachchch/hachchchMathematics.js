@@ -15,16 +15,16 @@ prod(K,N,gen){
 }
 fact(N){
   if(N==Math.round(N)){
-  return prod(1,N,"k");
+  return this.prod(1,N,"k");
   }else{
   console.error("残念ですが、小数に対応していません。");
   }
 }
 nPr(n,r){
-  return fact(n)/fact(n-r);
+  return this.fact(n)/this.fact(n-r);
 }
 nCr(n,r){
-  return fact(n)/(fact(r)*fact(n-r));
+  return this.fact(n)/(this.fact(r)*this.fact(n-r));
 }
 mean(arr){
   let ans=0;
