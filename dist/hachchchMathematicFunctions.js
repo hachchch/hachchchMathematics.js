@@ -16,8 +16,11 @@ prod(K,N,gen){
 fact(N){
   return prod(1,N,"k");
 }
-bC(n,r){
-  return fact(n)/(fact(r)*fact(n-r))
+nPr(n,r){
+  return fact(n)/fact(n-r);
+}
+nCr(n,r){
+  return fact(n)/(fact(r)*fact(n-r));
 }
 mean(arr){
   let ans=0;
