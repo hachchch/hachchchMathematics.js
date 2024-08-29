@@ -6,10 +6,15 @@ class mathematics{
   }
   return ans;
 }
-prod(K,N,gen){
+prod(K,N,gen,val){
   let ans=1;
+  if(!val){
   for(let k=K;k<=N;++k){
     ans=ans*eval(gen);
+  }
+  }else{
+  let syntax ="for(var "+val+"=K;"+val+"<=N;++"+val+"){ans=ans*eval(gen);}";
+  eval(syntax);
   }
   return ans;
 }
