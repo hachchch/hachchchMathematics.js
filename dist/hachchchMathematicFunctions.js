@@ -59,4 +59,21 @@ geomean(arr){
     }
     return Yarray[term];
   }
+  trapezoidal(a,b,f,n){
+    if(!n){
+    n=10001;
+    }
+    function F(x){
+      return eval(f);
+    }
+    let an=[a];
+    for(let i=1; i<=n; ++i){
+      an[i]=an[i-1]+((b-a)/n);
+    }
+    let ans=0;
+    for(let k=1; k<=n; ++k){
+      ans+=(an[k]-an[k-1])*(F(an[k])+F(an[k-1]))/2;
+    }
+    return ans;
+  }
 }
