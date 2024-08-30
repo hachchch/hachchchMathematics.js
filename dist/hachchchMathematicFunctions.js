@@ -18,12 +18,18 @@ prod(K,N,gen,val){
   }
   return ans;
 }
-fact(N){
-  if(N==Math.round(N)){
-  return this.prod(1,N,"k");
+fact(a){
+  if(a==Math.round(a)){
+  return this.prod(1,a,"k");
   }else{
-  console.error("残念ですが、小数に対応していません。");
+  return this.gamma(a+1);
   }
+}
+gamma(a,b){
+  if(!b){
+    b=100;
+  }
+  return this.int(0,b,"Math.pow(x,"+(a-1)+")*Math.exp(-x)",100000);
 }
 nPr(n,r){
   return this.fact(n)/this.fact(n-r);
