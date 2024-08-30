@@ -76,10 +76,30 @@ geomean(arr){
     }
     return ans;
   }
-  int(a,b,f){
+  int(a,b,f,mix){
     function F(x){
       return eval(f);
     }
+    if(!mix){
     return ((b-a)/6)*(F(a)+4*F((a+b)/2)+F(b));
+    }else{
+    if(mix/2!=Math.ceil(mix/2)){
+      mix=2*Math.ceil(mix/2);
+    }
+    let an=[0];
+    let h=(b-a)/mix;
+    for(let i=1; i<mix; ++i){
+      an[i]=a+i*h;
+    }
+    let ans1=0;
+    for(let i=1; i<=mix/2-1; ++i){
+      ans1+=F(an[2*i]);
+    }
+    let ans2=0;
+    for(let i=1; i<=mix/2; ++i){
+      ans2+=F(an[2*i-1]);
+    }
+    return (h/3)*(F(a)+2*ans1+4*ans2+F(b));
+    }
   }
 }
