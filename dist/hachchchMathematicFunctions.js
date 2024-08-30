@@ -1,4 +1,4 @@
-class mathematics{
+export class mathematics{
   sum(K,N,gen){
   let ans=0;
   for(let k=K;k<=N;++k){
