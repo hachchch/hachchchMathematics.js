@@ -76,4 +76,10 @@ geomean(arr){
     }
     return ans;
   }
+  int(a,b,f){
+    function F(x){
+      return eval(f);
+    }
+    return ((b-a)/6)*(F(a)+4*F((a+b)/2)+F(b));
+  }
 }
