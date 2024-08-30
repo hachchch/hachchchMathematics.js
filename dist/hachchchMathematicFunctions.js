@@ -48,4 +48,14 @@ geomean(arr){
   median(arr){
     return (arr[Math.floor((arr.length-1)/2)]+arr[Math.ceil((arr.length-1)/2)])/2;
   }
+  euler(term,x0,h,f){
+    let y=[x0];
+    function F(x,y){
+      return eval(f);
+    }
+    for(let n=1; n<=term; ++n){
+      y[n]=y[n-1]+h*F(x0+h,y[n-1]);
+    }
+    return y[term];
+  }
 }
