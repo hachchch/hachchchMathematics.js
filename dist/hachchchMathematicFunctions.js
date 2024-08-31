@@ -149,6 +149,6 @@ geomean(arr){
     mid1=mid1+0.5;
     mid2=mid2-0.5;
     }
-    return [m.median(a.slice(0,mid1-1)),m.median(a),m.median(a.slice(mid2,a.length))];
+    return [this.median(a.slice(0,mid1-1)),this.median(a),this.median(a.slice(mid2,a.length))];
   }
 }
