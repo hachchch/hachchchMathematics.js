@@ -1,4 +1,13 @@
 export class mathematics{
+  csc(a){
+  return 1/Math.sin(a);
+  }
+  sec(a){
+  return 1/Math.cos(a);
+  }
+  cot(a){
+  return 1/Math.tan(a);
+  }
   sum(K,N,gen){
   let ans=0;
   for(let k=K;k<=N;++k){
@@ -107,5 +116,39 @@ geomean(arr){
     }
     return (h/3)*(F(a)+2*ans1+4*ans2+F(b));
     }
+  }
+  B(N){
+      if(N==0){
+        return 1;
+      }
+      let ans=0;
+      for(let k=0; k<N; ++k){
+        ans+=this.nCr(N+1,k)*this.B(k);
+      }
+      return (-1/(N+1))*ans;
+  }
+  divisor(N){
+    if(N!=Math.trunc(N)){
+      console.error("小数に対応していません");
+    }
+    let ans=[];
+    for(let k=1; k<=N; ++k){
+      if(N/k==Math.trunc(N/k)){
+        ans.push(k);
+      }
+    }
+    return ans;
+  }
+  mod(a,b){
+    return a-(b*Math.floor(a/b));
+  }
+  quartile(a){
+    let mid1=(a.length+1)/2;
+    let mid2=(a.length+1)/2;
+    if(mid1!=Math.trunc(mid1)){
+    mid1=mid1+0.5;
+    mid2=mid2-0.5;
+    }
+    return [m.median(a.slice(0,mid1-1)),m.median(a),m.median(a.slice(mid2,a.length))];
   }
 }
